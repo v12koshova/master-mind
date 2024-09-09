@@ -1,0 +1,228 @@
+body {
+    margin: 0;
+}
+
+.container {
+    background: #e2e3e8;
+    background-image: url('./i/background.jpg');
+    background-size: contain;
+    min-height: 100dvh;
+    font-family: "DM Sans", sans-serif;
+    color: #c4c2c2;
+    padding-top: 20px;
+    box-sizing: border-box;
+}
+
+
+.field-wrap {
+    background-image: url('./i/gradiend-bg.jpg');
+    background-size: cover;
+    width: 350px;
+    margin: auto;
+    padding: 10px;
+    border-radius: 20px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    column-gap: 5px;
+    row-gap: 2px;
+    box-sizing: border-box;
+}
+
+.field {
+    border-radius: 20px 20px 0  0;
+    width: 100%;
+    height: 100%;
+    padding: 15px 35px;
+    box-sizing: border-box;
+    background: #ffffff;    
+}
+
+.field-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 1px solid #d8d8d8;
+    padding: 10px 0;
+}
+.field-row:last-of-type {
+    border-bottom: none;
+}
+
+.row-number {
+    margin: 0;
+    width: 20px;
+}
+
+.field-pin-places {
+    display: flex;
+    justify-content: space-evenly;
+    column-gap: 10px;
+}
+
+.field-pin-place {
+    border-radius: 50%;
+    width: 27px;
+    height: 27px;
+    background: #f2f3f8;
+}
+
+
+.field-row.active .field-pin-place {
+    border: 1px solid #c4c2c2;;
+}
+.field-row.active {
+    color: #8b8b8b;
+}
+
+.field-answers {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 5px;
+    width: 23px;
+}
+
+.field-answer-pin {
+    border: 2px solid #d8d8d8;
+    border-radius: 50%;
+    width: 5px;
+    height: 5px;
+}
+
+
+.colors-block {
+    display: grid;
+    grid-template-columns: repeat(4, 40px);
+    /* display: flex; */
+    /* flex-direction: column; */
+    gap: 10px;
+    /* width: 362px; */
+    height: 100%;
+    width: 100%;
+    /* margin: auto; */
+    /* margin-top: 2px; */
+    justify-content: space-evenly;
+    column-gap: 20px;
+    box-sizing: border-box;
+    background: #ffffff;
+    padding: 15px;
+    border-radius: 0 20px 20px 0;
+    border-radius: 0 0 20px 20px;
+}
+
+.color {
+    width: 40px;
+    height: 40px;
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+}
+.delete-color {
+    position: relative;
+    grid-column-start: 4;
+    grid-row: 1;
+
+}
+.delete-color::before {
+    position: absolute;
+    content: "";
+    background-image: url('./i/delete.svg');
+    width: 22px;
+    height: 22px;
+    top: 22%;
+    left: 21%;
+    background-repeat: no-repeat;
+    background-size: 40px;
+}
+
+.reset-game {
+    position: relative;
+    grid-column-start: 4;
+    grid-row: 2;
+}
+.reset-game::before {
+    position: absolute;
+    content: "";
+    background-image: url('./i/reset.svg');
+    width: 20px;
+    height: 20px;
+    top: 24%;
+    left: 24%;
+    background-repeat: no-repeat;
+    background-size: 40px;
+}
+
+.includes {
+    background: rgb(211, 211, 211);
+    border-color: rgb(211, 211, 211);
+}
+
+.correct {
+    background: black;
+    border-color: black;
+}
+
+.modal-wrap {
+    position: absolute;
+    background: url('./i/background.jpg');
+    background-size: contain;
+    width: 100dvw;
+    height: 100dvh;
+    z-index: 0;
+    margin: auto;
+    overflow: hidden;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 0;
+    display: none;
+}
+
+.modal-window {
+    text-align: center;
+    border: none;
+    padding: 40px 50px;
+    border-radius: 20px;
+    position: relative;
+    background-image: url(./i/gradiend-bg.jpg);
+    color: black;
+}
+
+.text {
+    font-weight: 400;
+}
+
+.modal-window::after {
+    position: absolute;
+    content: "";
+    height: 80%;
+    width: 90%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 20px;
+    z-index: -3;
+    background-color: white;
+}
+
+.modal-pins {
+    margin-bottom: 20px;
+}
+
+.congrats {
+    background: rgb(250,51,149);
+    background: linear-gradient(90deg, rgba(250,51,149,1) 12.5%, rgba(9,9,121,1) 25%, rgba(253,232,82,1) 43%, rgba(238,196,0,1) 60%, rgba(81,235,190,1) 90%, rgba(1,205,142,1) 100%);
+    background-clip: text;
+    color: transparent;
+    font-weight: bold;
+}
+.modal-new-game {
+    border: 1px solid black;
+    background: none;
+    padding: 10px;
+    border-radius: 10px;
+    margin-top: 0;
+    margin-top: 10px;
+    cursor: pointer;
+}
